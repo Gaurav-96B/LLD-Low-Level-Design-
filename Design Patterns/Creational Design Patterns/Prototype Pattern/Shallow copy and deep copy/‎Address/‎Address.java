@@ -1,4 +1,4 @@
-public class Address implements Cloneable {
+public class Address implements Prototype {
 	
 	private String addressLine1;
 	private String addressLine2;
