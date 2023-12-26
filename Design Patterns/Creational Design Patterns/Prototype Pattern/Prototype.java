@@ -1,3 +1,3 @@
-interface Prototype extends Cloneable {
+public interface Prototype extends Cloneable {
     Prototype clone();
 }
