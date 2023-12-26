@@ -1,4 +1,4 @@
-public class Person implements Cloneable {
+public class Person implements Prototype {
     private String name;
     private int age;
     private Address address;
