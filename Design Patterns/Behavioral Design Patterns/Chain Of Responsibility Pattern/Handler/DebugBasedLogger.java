@@ -11,8 +11,8 @@ public class DebugBasedLogger extends Logger {
         this.nextLevelLogger = nextLevelLogger;  
     }  
         
-    public void logMessage(String levels, String msg){  
-        if(this.levels<=levels){  
+    public void logMessage(Request request, String msg){  
+        if(this.levels<=request.getType()){  
             displayLogInfo(msg);  
         }  
         if (nextLevelLogger!=null) {  
