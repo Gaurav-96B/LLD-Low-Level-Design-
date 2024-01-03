@@ -1,8 +1,10 @@
 public class ConcreteColleague implements Colleague {
-    private Mediator mediator;
-
-    public ConcreteColleague(Mediator med, String name) {
-		super(med, name);
+	private Mediator mediator;
+	private String name;
+	
+        public ConcreteColleague(Mediator med, String name) {
+		this.mediator=med;
+		this.name=name;
 	}
 
     @Override
