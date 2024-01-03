@@ -1,9 +1,9 @@
 public class ConsoleBasedLogger extends Logger {  
 
     private Logger nextLevelLogger; 
-    private int levels;  
+    private String levels;  
   
-    public ConsoleBasedLogger(int levels) {  
+    public ConsoleBasedLogger(String levels) {  
         this.levels=levels;  
     }  
     
@@ -11,7 +11,7 @@ public class ConsoleBasedLogger extends Logger {
         this.nextLevelLogger = nextLevelLogger;  
     }  
         
-    public void logMessage(int levels, String msg){  
+    public void logMessage(String levels, String msg){  
         if(this.levels<=levels){  
             displayLogInfo(msg);  
         }  
