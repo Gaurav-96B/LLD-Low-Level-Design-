@@ -11,12 +11,12 @@ public class ErrorBasedLogger extends Logger {
         this.nextLevelLogger = nextLevelLogger;  
     }  
         
-    public void logMessage(String levels, String msg){  
-        if(this.levels<=levels){  
+    public void logMessage(Request request, String msg){  
+        if(this.levels<=request.getType()){  
             displayLogInfo(msg);  
         }  
         if (nextLevelLogger!=null) {  
-            nextLevelLogger.logMessage(levels, msg);  
+            nextLevelLogger.logMessage(request, msg);  
         }  
     }  
     public void displayLogInfo(String msg) {  
