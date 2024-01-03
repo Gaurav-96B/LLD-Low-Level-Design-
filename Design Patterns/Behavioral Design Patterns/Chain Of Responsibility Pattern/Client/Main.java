@@ -11,12 +11,12 @@ public class Client {
          chainLogger.logMessage(request3, "This was the error now debugging is compeled"
     }
     private static Logger doChaining(){  
-          Logger consoleLogger = new ConsoleBasedLogger(Level.OUTPUTINFO);  
+          Logger consoleLogger = new ConsoleBasedLogger("OUTPUTINFO");  
             
-          Logger errorLogger = new ErrorBasedLogger(Level.ERRORINFO);  
+          Logger errorLogger = new ErrorBasedLogger("ERRORINFO");  
           consoleLogger.setNextLevelLogger(errorLogger);  
             
-          Logger debugLogger = new DebugBasedLogger(Level.DEBUGINFO);  
+          Logger debugLogger = new DebugBasedLogger("DEBUGINFO");  
           errorLogger.setNextLevelLogger(debugLogger);  
             
           return consoleLogger;   
