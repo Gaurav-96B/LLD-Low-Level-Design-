@@ -16,7 +16,7 @@ public class DebugBasedLogger extends Logger {
             displayLogInfo(msg);  
         }  
         if (nextLevelLogger!=null) {  
-            nextLevelLogger.logMessage(levels, msg);  
+            nextLevelLogger.logMessage(request, msg);  
         }  
     }  
     public void displayLogInfo(String msg) {  
