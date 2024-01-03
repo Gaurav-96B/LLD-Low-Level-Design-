@@ -1,9 +1,9 @@
 public class ConcreteColleague implements Colleague {
     private Mediator mediator;
 
-    public ConcreteColleague(Mediator mediator) {
-        this.mediator = mediator;
-    }
+    public ConcreteColleague(Mediator med, String name) {
+		super(med, name);
+	}
 
     @Override
     public void sendMessage(String message) {
