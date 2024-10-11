@@ -1,5 +1,5 @@
 public class Singleton {
-    private static final Singleton instance = new Singleton();
+    private static Singleton instance = new Singleton();
     private Singleton() {
         // Initialization code
     }
