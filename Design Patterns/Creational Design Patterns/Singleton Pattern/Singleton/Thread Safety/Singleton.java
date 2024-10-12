@@ -7,17 +7,17 @@ public class Singleton {
 
     public synchronized static Singleton getInstance() {
         if (instance == null) {
-             instance = new Singleton();
-            }
+            instance = new Singleton();
+        }
         return instance;
     }
 
-             OR
-    
+    OR
+
     // Double-checked locking for thread safety
     public static Singleton getInstance() {
         if (instance == null) {
-            synchronized (Singleton.class) {
+            synchronized(Singleton.class) {
                 if (instance == null) {
                     instance = new Singleton();
                 }
