@@ -1,6 +1,6 @@
 public class Main {
 	public static void main(String args[]){
-	      //get color factory
+	      //get shape factory
 	      AbstractFactory shapeFactory = FactoryProducer.getFactory("Shape");
  
 	      //Get Circle class object
@@ -20,7 +20,8 @@ public class Main {
  
 	      //call drawShape method of Square
 	      shape3.drawShape();
- 
+
+		
 	      //get color factory
 	      AbstractFactory colorFactory = FactoryProducer.getFactory("Color");
  
