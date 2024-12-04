@@ -1,48 +1,38 @@
 class Student implements Cloneable{
-    private int id;
-    private String name;
-    private Address address;
-  
+    String name;
+    int id;
+    Address address;
+    
     public Student(){
         
     }
-    
-    public Student(int id, String name,Address address){
-        this.id=id;
+    public Student(String name,int id,Address address){
         this.name=name;
+        this.id=id;
         this.address=address;
     }
-    
-    public void setId(int id){
-        this.id=id;
-    }
-    
-    public int getId(){
-        return id;
-    }
-    
     public void setName(String name){
         this.name=name;
     }
-    
-    public String getName(String name){
-        return name;
+    public void setId(int id){
+        this.id=id;
     }
-    
-     public void setAddress(Address address){
+    public void setAddress(Address address){
         this.address=address;
     }
-    
-    
-    public Address getAddress(Address address){
+    public String getName(){
+        return name;
+    }
+    public int getId(){
+        return id;
+    }
+    public Address getAddress(){
         return address;
     }
-    
     public String toString(){
-        return this.id+" "+this.name+" "+this.address;
+        return this.name+" "+this.id+" "+this.address;
     }
-    
-    public Object clone() throws CloneNotSupportedException{
+    public Student clone() throws CloneNotSupportedException{
         Student student=(Student)super.clone();
         student.address=(Address)address.clone();
         return student;
@@ -50,14 +40,13 @@ class Student implements Cloneable{
 }
 
 class Address implements Cloneable{
-    private String city;
-    private String state;
+    String city;
+    String state;
     
     public Address(){
         
     }
-    
-    public Address(String city, String state){
+    public Address(String city,String state){
         this.city=city;
         this.state=state;
     }
@@ -66,35 +55,32 @@ class Address implements Cloneable{
         this.city=city;
     }
     
+    public void setState(String state){
+       this.state=state; 
+    }
+    
     public String getCity(){
         return city;
     }
     
-    public void setState(String state){
-        this.state=state;
-    }
-    
     public String getState(){
-        return state;
+       return state; 
     }
     
     public String toString(){
         return this.city+" "+this.state;
     }
-    
-    public Object clone() throws CloneNotSupportedException{
-        return super.clone();
+    public Address clone() throws CloneNotSupportedException{
+        return (Address)super.clone();
     }
 }
-
 class Main {
-    public static void main(String[] args) throws CloneNotSupportedException{
-        Address address=new Address("New-York","America");
-        Student s1=new Student(1,"Saurav",address);
-        Student s2=(Student)s1.clone();
-        address.setCity("Boston");
-        System.out.println(s1);
-        System.out.println(s2);
-        
+    public static void main(String[] args) throws CloneNotSupportedException {
+    Address address=new Address("New-York","America");
+    Student student=new Student("Yash",1,address);
+    Student clonedStudent=student.clone();
+    clonedStudent.getAddress().setCity("Boston");
+    System.out.println(student);
+    System.out.println(clonedStudent);
     }
 }
