@@ -1,7 +1,7 @@
 class OutOfCashState implements ATMState {
-    private ATMContext atm;
+    private ATM atm;
 
-    public OutOfCashState(ATMContext atm) {
+    public OutOfCashState(ATM atm) {
         this.atm = atm;
     }
 
