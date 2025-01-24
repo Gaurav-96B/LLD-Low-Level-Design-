@@ -3,18 +3,18 @@ public class Main {
         // Receiver
         Light livingRoomLight = new Light();
 
-        // Concrete Commands
+        // Commands
         Command turnOnLight = new TurnOnLightCommand(livingRoomLight);
         Command turnOffLight = new TurnOffLightCommand(livingRoomLight);
 
         // Invoker
         RemoteControl remote = new RemoteControl();
 
-        // Turn ON the light
+        // Set command and press the button for turning on the light
         remote.setCommand(turnOnLight);
         remote.pressButton();
 
-        // Turn OFF the light
+        // Set command and press the button for turning off the light
         remote.setCommand(turnOffLight);
         remote.pressButton();
     }
