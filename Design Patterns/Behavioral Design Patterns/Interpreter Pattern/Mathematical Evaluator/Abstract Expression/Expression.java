@@ -1,1 +1,4 @@
+interface Expression {
+    int interpret();
+}
 
