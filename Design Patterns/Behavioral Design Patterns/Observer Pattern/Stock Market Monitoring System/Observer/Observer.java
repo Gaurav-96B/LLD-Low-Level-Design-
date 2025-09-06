@@ -1,3 +1,3 @@
-interface Observer {
-    void update(float stockPrice);
+interface Observer{
+    public void update(String stockName,double price);
 }
