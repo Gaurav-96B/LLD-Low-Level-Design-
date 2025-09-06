@@ -1,12 +1,11 @@
-class Investor implements Observer {
-    private String name;
-
-    public Investor(String name) {
-        this.name = name;
+class Investor implements Observer{
+    private String investorName;
+    public Investor(String investorName){
+        this.investorName=investorName;
     }
-
-    @Override
-    public void update(float stockPrice) {
-        System.out.println("Investor " + name + " notified. New stock price: $" + stockPrice);
+    
+    public void update(String stockName,double stockPrice){
+        System.out.println("Notification to " + investorName + ": " + stockName + " price changed to " + stockPrice);
     }
+    
 }
