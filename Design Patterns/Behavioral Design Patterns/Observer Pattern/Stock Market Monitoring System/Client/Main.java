@@ -1,32 +1,31 @@
 public class Main {
     public static void main(String[] args) {
-        // Create the subject
-        StockMarket stockMarket = new StockMarket();
-
-        // Create observers
-        Investor investor1 = new Investor("Alice");
-        Investor investor2 = new Investor("Bob");
-        Broker broker1 = new Broker("XYZ Securities");
-
+        // Create stocks
+        Stock apple = new Stock("AAPL", 150.0);
+        Stock google = new Stock("GOOGL", 2800.0);
+       
+        // Create investors
+        Investor investor1 = new Investor("Gaurav");
+        Investor investor2 = new Investor("Rohit");
+        Investor investor3 = new Investor("Anita");
+        
         // Register observers
-        stockMarket.registerObserver(investor1);
-        stockMarket.registerObserver(investor2);
-        stockMarket.registerObserver(broker1);
+        apple.addObserver(investor1);
+        apple.addObserver(investor2);
 
-        // Update stock prices and notify observers
-        System.out.println("Updating stock price to $100.0");
-        stockMarket.setStockPrice(100.0f);
+        google.addObserver(investor2);
+        google.addObserver(investor3);
+        
+        // Simulate price updates
+        apple.setPrice(155.5);
+        google.setPrice(2850.0);
 
-        System.out.println("\nUpdating stock price to $150.0");
-        stockMarket.setStockPrice(150.0f);
+        // Investor leaves
+        apple.removeObserver(investor2);
 
-        // Unregister an observer
-        System.out.println("\nUnregistering Bob");
-        stockMarket.unregisterObserver(investor2);
+        // Another price update
+        apple.setPrice(160.0);
 
-        // Update stock price again
-        System.out.println("\nUpdating stock price to $200.0");
-        stockMarket.setStockPrice(200.0f);
     }
 }
 
