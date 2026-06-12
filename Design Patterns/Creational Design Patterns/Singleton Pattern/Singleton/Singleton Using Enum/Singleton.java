@@ -1,18 +1,10 @@
-enum Singleton {
+public enum Singleton {
     INSTANCE;
-
-    // A sample method in the Singleton class
     public void someMethod() {
         System.out.println("Singleton using Enum!");
     }
 
-    public static void main(String[] args) {
-        // Access the singleton instance and call its method
-        Singleton singletonInstance = Singleton.INSTANCE;
-        singletonInstance.someMethod();
-    }
 }
-
 class Main {
  public static void main(String[] args) {
         Singleton instance1 = Singleton.INSTANCE;
